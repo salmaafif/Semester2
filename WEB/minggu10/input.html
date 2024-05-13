@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview</title>
+    <link rel="stylesheet" href="input.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<style>
+    button {
+        padding: 10px;
+
+    }
+</style>
+
+<body>
+    <div class="body-container">
+        <div class="sidebar">
+            <header>
+                <div class="image-text">
+                    <div class="image">
+                        <img src="https://clipartcraft.com/images/best-logo-design-transparent-6.png" alt="Logo" />
+                    </div>
+                    <div class="header-text text">
+                        <span class="main">Admin Home</span>
+                    </div>
+                </div>
+                <i class="bx bx-chevron-right toggle" onclick="fnToggleMenu()"></i>
+            </header>
+
+            <div class="menu-bar">
+                <div class="menu">
+                    <ul class="menu-links">
+                        <li class="search-bar">
+                          <i class="bx bx-search icons"></i>
+                          <input type="" name="" id="" placeholder="Search..." />
+                        </li>
+                        <li class="nav-link">
+                            <a href="overview.php">
+                                <i class="bx bx-home-alt icons"></i>
+                                <span class="text nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="input.html">
+                                <i class="bx bx-bar-chart-alt-2 icons"></i>
+                                <span class="text nav-text">Input Data</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="datamhs.php">
+                                <i class="bx bx-wallet-alt icons"></i>
+                                <span class="text nav-text">View Data</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="profile.php">
+                                <i class="bx bx-bell icons"></i>
+                                <span class="text nav-text">Profile</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-content">
+                    <li class="nav-link">
+                        <a href="logout.php">
+                            <i class="bx bx-log-out icons"></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+                    <li class="mode">
+                        <div class="moon-sun">
+                            <i class="bx bx-moon icons moon"></i>
+                            <i class="bx bx-sun icons sun"></i>
+                        </div>
+                        <span class="mode-text text">Dark Mode</span>
+                        <div class="toggle-switch" onclick="fnThemeSwitch()">
+                            <span class="switch"></span>
+                        </div>
+                    </li>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="table_header">
+                    <p><b>INPUT DATA MAHASISWA</b></p>
+                </div>
+                <div class="container2">
+                    <form action="input.php" method="post">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">NRP</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="fname" name="nrp" placeholder="Your name..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="lname">Nama</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="lname" name="nama" placeholder="Your last name..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="country">Jenis Kelamin</label>
+                            </div>
+                            <div class="col-25">
+                                <select id="country" name="jenis_kelamin">
+                                    <option selected disabled value></option>
+                                    <option value="Perempuan">Perempuan</option>
+                                    <option value="Laki-Laki">Laki - Laki</option>
+                                </select>
+                            </div>
+                            <div class="col-25">
+                                <label for="country">Jurusan</label>
+                            </div>
+                            <div class="col-25">
+                                <select id="country" name="jurusan">
+                                    <option selected disabled value></option>
+                                    <option value="IT">Teknik Infomatika</option>
+                                    <option value="MEKA">Teknik Mekatronika</option>
+                                    <option value="ELKA">Teknik Elektronika</option>
+                                    <option value="DS">Data Sains</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="country">Mata Kuliah Favorit</label>
+                            </div>
+                            <div class="col-75">
+                                <select id="country" name="matfav">
+                                    <option selected disabled value></option>
+                                    <option value="Algoritma dan Struktur Data">Algoritma dan Struktur Data</option>
+                                    <option value="Pemrograman Web">Pemrograman Web</option>
+                                    <option value="Basis Data">Basis Data</option>
+                                    <option value="Operating System">Operating System</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">Umur</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="fname" name="umur">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">Hobi</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="fname" name="hobi" placeholder="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">Nomor Handphone</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="fname" name="nohp" placeholder="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">Asal Sekolah</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="fname" name="asalsma" placeholder="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">Alamat</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="fname" name="alamat" placeholder="">
+                            </div>
+                        </div>
+                </div>
+                <div>
+                    <a href="input.php"><button class="kembali" style="margin-top: 20px;">Submit</button></a>
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="overview.js"></script>
+</body>
+
+</html>

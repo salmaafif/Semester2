@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0.9%;
+    box-sizing: border-box;
+    padding: 0;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    background-color: #14111B;
+}
+p{
+    font-size: 50px;
+}
+.table_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+.table_header p{
+    color: #dddddd;
+    width: 100%;
+    table-layout: fixed;
+    min-width: 500px;
+}
+.tambah{
+    padding: 10px 20px;
+    color: #000000;
+    background-color: bisque;
+}
+button {
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
+}
+.table_section{
+    height: auto;
+    overflow: auto;
+}
+table{
+    width: 100%;
+    table-layout: fixed;
+    min-width: 500px;
+    border-collapse: collapse;
+}
+td {
+    padding: 3px;
+    height: 15px;
+}
+thead th{
+    background-color: rgb(194, 197, 199);
+    color: #14111B;
+    position: sticky;
+    top: 0;
+    font-size: 13px;
+}
+th,td{
+    border-bottom: 2px #ffffff;
+    padding: 7px 2px;
+    word-break: unset;
+    text-align: center;
+    color: #dddddd;
+    font-size: 12px;
+}
+tr:hover td{
+    color: #0298cf;
+    cursor: pointer;
+    background-color: #14111B;
+}
+::placeholder{
+    color: aqua;
+}
+.btn-delete{
+    background: url(images/hapus.png) no-repeat 5px 40px #db5d59;
+    height: 22px;
+    width: 22px; 
+}
+.btn-update{
+    background: url(images/edit.png) no-repeat 5px 40px #00b3a8;
+    height: 22px;
+    width: 22px; 
+    text-indent: -9999px; 
+}
+::-webkit-scrollbar{
+    height: 5px;
+    width: 5px;
+}

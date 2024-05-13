@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Input Data Mahasiswa</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Data Mahasiswa D4 IT A</title>
+  <link rel="stylesheet" href="tampilaninput.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+</head>
+
+<body style="background-color: #14111B; color: whitesmoke;">
+  <div class="table_header">
+    <p>INPUT DATA MAHASISWA</p>
+    <div class="buatbutton">
+      <tr>
+        <td><a href="tampil.php"><button class="kembali">View Data</button></a></td>
+      </tr>
+    </div>
+  </div>
+  <div class="tampilanform">
+    <form action="input.php" method="post">
+      <div class="form-floating mb-3">
+        <input class="form-control" id="floatingInput" placeholder="XXXXXXXXXX" name="nrp">
+        <label for="floatingInput" style="color: #14111B;">NRP</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="floatingPassword" placeholder="Nama" name="nama">
+        <label for="floatingInput" style="color: #14111B;">Nama Mahasiswa</label>
+      </div>
+
+      <div style="display: flex; justify-content: space-between;">
+        <div class="col-md-3 mb-3">
+          <label for="validationCustom04" class="form-label">Jenis Kelamin</label>
+          <select class="form-select" id="validationCustom04" name="jenis_kelamin">
+            <option selected disabled value></option>
+            <option value="Perempuan">Perempuan</option>
+            <option value="Laki-Laki">Laki - Laki</option>
+          </select>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationCustom04" class="form-label">Jurusan</label>
+          <select class="form-select" id="validationCustom04" name="jurusan">
+            <option selected disabled value></option>
+            <option value="IT">Teknik Infomatika</option>
+            <option value="MEKA">Teknik Mekatronika</option>
+            <option value="ELKA">Teknik Elektronika</option>
+            <option value="DS">Data Sains</option>
+          </select>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationCustom04" class="form-label">Mata Kuliah Favorit</label>
+          <select class="form-select" id="validationCustom04" name="matfav">
+            <option selected disabled value></option>
+            <option value="Algoritma dan Struktur Data">Algoritma dan Struktur Data</option>
+            <option value="Pemrograman Web">Pemrograman Web</option>
+            <option value="Basis Data">Basis Data</option>
+            <option value="Operating System">Operating System</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input class="form-control" id="floatingPassword" placeholder="Umur" name="umur">
+        <label for="floatingInput" style="color: #14111B;">Umur</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input class="form-control" id="floatingPassword" placeholder="hobi" name="hobi">
+        <label for="floatingInput" style="color: #14111B;">Hobi</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="floatingPassword" placeholder="nohp" name="nohp">
+        <label for="floatingInput" style="color: #14111B;">Nomor Handphone</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="floatingPassword" placeholder="asalsma" name="asalsma">
+        <label for="floatingInput" style="color: #14111B;">Asal Sekolah</label>
+      </div>
+      <div class="form-floating mb-3">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="alamat"></textarea>
+        <label for="floatingTextarea2" style="color: #14111B;">Alamat</label>
+      </div>
+      <div style="display: flex;">
+      <a href="input.php"><button class="kembali">Submit</button></a>
+      <a href="page.php"><button class="kembali">Home</button></a>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

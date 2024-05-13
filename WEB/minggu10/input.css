@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    font-family: "Poppins", "sans-sarif";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-color: #e4e9f7;
+    --sidebar-color: #fff;
+    --primary-color: #f4f2f2;
+    --primary-color-light: #f4f2f2;
+    --toggle-color: #ddd;
+    --text-color: #707070;
+    --dark-color: #000;
+
+    --trans-02: all 0.2s ease;
+    --trans-03: all 0.3s ease;
+    --trans-04: all 0.4s ease;
+    --trans-04: all 0.5s ease;
+}
+
+body {
+    background-color: var(--body-color);
+    transition: var(--trans-02);
+}
+
+body.dark {
+    --body-color: #181914;
+    --sidebar-color: #242526;
+    --primary-color: #34383c;
+    --primary-color-light: #383a3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+    --dark-color: #fff;
+}
+
+.body-container {
+    width: 100%;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    text-align: center;
+}
+
+/* CSS for Sidebar */
+.sidebar {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--sidebar-color);
+    padding: 10px 14px;
+    display: block;
+    /* min-width: 250px; */
+    /* Tambahkan lebar minimum */
+    max-width: 250px;
+    /* Tambahkan lebar maksimum jika perlu */
+}
+
+.sidebar .text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.sidebar .image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    transition: var(--trans-02);
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar .image-text img {
+    height: 34px;
+    border-radius: 10px;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.sidebar .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .main {
+    font-weight: 600;
+}
+
+.sidebar .sup {
+    margin-top: -2px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+
+.sidebar li .icons,
+.sidebar li .text {
+    color: var(--text-color);
+    transition: var(--trans-03);
+}
+
+.sidebar .search-bar input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+}
+
+.sidebar .search-bar {
+    background-color: var(--primary-color-light);
+}
+
+.sidebar li a {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+    border-radius: 6px;
+    transition: var(--trans-04);
+}
+
+.sidebar li a:hover {
+    background-color: var(--primary-color);
+}
+
+.sidebar .menu-links .nav-link a {
+    font-size: 16px;
+}
+
+
+.sidebar .menu-bar {
+    height: 100%;
+    height: calc(100% - 50px);
+    display: contents;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .mode {
+    position: relative;
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    padding: 10px;
+}
+
+.sidebar .mode .moon-sun {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i.sun {
+    opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun {
+    opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+    position: absolute;
+    right: -10px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    background: var(--primary-color-light);
+    cursor: pointer;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 44px;
+    background-color: var(--toggle-color);
+    border-radius: 25px;
+}
+
+.switch::before {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+}
+
+body.dark .switch::before {
+    left: 25px
+}
+
+body.dark .container {
+    color: white;
+}
+
+/* CSS for miminized menu */
+.sidebar.close {
+    width: 78px;
+    padding: 10px 10px !important;
+    box-shadow: 0px 0px 6px 0px #cfcfcf;
+}
+
+.sidebar.close:hover {
+    box-shadow: 0px 0px 6px 0px #a4a6a7;
+}
+
+body.dark .sidebar.close {
+    box-shadow: none;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar.close .search-bar {
+    background-color: var(--sidebar-color);
+}
+
+body.dark .search-bar input {
+    color: white;
+}
+
+.sidebar.close .toggle {
+    transform: translateY(-50%);
+}
+
+.sidebar.close .menu-bar .mode .toggle-switch {
+    border-radius: 6px;
+    right: 0;
+}
+
+body.dark .sidebar .mode .moon-sun .moon {
+    display: none;
+}
+
+.profile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #cfcfcf;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container2 {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 15px;
+    width: 120vh;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 5px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 5px;
+}
+
+.row {
+    color: #000;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    color: #000;
+}
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+
+    .col-25,
+    .col-75,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+p {
+    font-size: 30px;
+}
+
+.table_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+.table_header p {
+    width: 100%;
+    table-layout: fixed;
+    min-width: 500px;
+}
+
+.kembali {
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    background-color: bisque;
+    border-radius: 6px;
+    height: 50px;
+    width: auto;
+}

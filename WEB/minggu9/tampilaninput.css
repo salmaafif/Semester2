@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+p{
+    font-size: 40px;
+}
+.table_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+.table_header p{
+    color: #dddddd;
+    width: 100%;
+    table-layout: fixed;
+    min-width: 500px;
+}
+.kembali{
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    background-color: bisque;
+    border-radius: 6px;
+    height: 50px;
+    width: auto;
+}
+button {
+    padding: 10px;
+    
+}
+.tampilanform{
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
