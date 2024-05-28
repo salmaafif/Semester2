@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+/* Custom Navbar Colors */
+.navbar-custom {
+    background-color: #2A3133; /* Replace with your desired background color */
+}
+  
+.navbar-custom 
+.navbar-brand,
+.navbar-custom 
+.navbar-nav 
+.nav-link {
+    color: #ffffff; /* Replace with your desired text color */
+}
+
+.navbar-custom 
+.navbar-toggler-icon {
+    background-color: #ffffff; /* Replace with your desired color for the toggler icon */
+}
+
+.navbar-custom 
+.navbar-toggler {
+border-color: #ffffff; /* Replace with your desired border color for the toggler button */
+}
+ /* body */
+body {
+    background-color: #C3BCC2;
+}

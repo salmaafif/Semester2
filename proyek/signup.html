@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <form action="signup.php" method="post">
+        <div class="container">
+            <div class="form signup">
+                <h2>Sign Up</h2>
+                <div style="display: flex; justify-content: space-around; gap: 40px;">
+                    <div class="inputBox">
+                        <input type="text" required="required" name="nama">
+                        <i class="fa-regular fa-user"></i>
+                        <span>name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" required="required" name="nrp">
+                        <i class="fa-regular fa-id-badge"></i>
+                        <span>nrp</span>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-around; gap: 40px;">
+                    <div class="inputBox">
+                        <input type="date" required="required" name="ttl">
+                        <i class="fa-solid fa-cake-candles"></i>
+                        <span>birthday</span>
+                    </div>
+                    <div class="inputBox">
+                        <select type="text" required="required" name="role">
+                            <option selected disabled value></option>
+                            <option value="Dosen">Dosen</option>
+                            <option value="Mahasiswa">Mahasiswa</option>
+                        </select>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>role</span>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-around; gap: 40px;">
+                    <div class="inputBox">
+                        <input type="text" required="required" name="username">
+                        <i class="fa-solid fa-user-secret"></i>
+                        <span>username</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" required="required" name="password">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>password</span>
+                    </div>
+                </div>
+                <div class="inputBox" style="width: 640px;">
+                    <form action="photo.php" method="post" enctype="multipart/form-data"></form>
+                    <input type="file" required="required" name="photo">
+                    <i class="fa-solid fa-photo-film"></i>
+                    <span>photo</span>
+                </div>
+                <div style="margin-left: 27%;">
+                    <div class="inputBox">
+                        <input type="submit" class="create" value="Create Account" name="signup">
+                    </div>
+                    <p>Already a member ? <a href="homelogin.php" class="login">Log in</a></p>
+
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+    <script>
+        let login = document.querySelector('.login');
+        let create = document.querySelector('.create');
+        let container = document.querySelector('.container');
+
+        login.onclick = function () {
+            container.classList.add('signinForm');
+        }
+
+        create.onclick = function () {
+            container.classList.remove('signinForm');
+        }
+    </script>
+</body>
+
+</html>
