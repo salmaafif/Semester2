@@ -13,6 +13,8 @@ if (isset($_COOKIE['username'])) {
     $_SESSION['username'] = $_COOKIE['username'];
     $_SESSION['status'] = "login";
 }
+
+$profile_id = $_SESSION['id_profile'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -72,14 +74,13 @@ if (isset($_COOKIE['username'])) {
                 $task_result = $conn->query($task_query);
 
                 if ($task_result->num_rows > 0) {
-                    // Lakukan sesuatu jika ada tugas yang ditemukan
                     while ($d = $task_result->fetch_assoc()) {
                 ?>
                         <div style="height: 170px; width: 300px;" class="col-sm-6 mb-3 mb-sm-0">
                             <div class="card border border-2 rounded-4">
                                 <div class="card-body">
-                                    <h5><?php echo $d['title']; ?></h5>
-                                    <p class="text-truncate"><?php echo $d['deskripsi']; ?></p>
+                                    <h5><?php echo htmlspecialchars($d['title']); ?></h5>
+                                    <p class="text-truncate"><?php echo htmlspecialchars($d['deskripsi']); ?></p>
                                     <a href="detailmhs.php?task_id=<?php echo $d['task_id']; ?>" type="button" class="btn btn-outline-dark btn-block align-self-end">Detail</a>
                                 </div>
                             </div>
@@ -98,32 +99,36 @@ if (isset($_COOKIE['username'])) {
             <div class="container text-center">
                 <div class="row gap-4 mb-4">
                     <?php
-                    // Mendapatkan data semua tugas yang sudah selesai
-                    $completed_query = "
-                        SELECT t.title, t.deskripsi
+                    // Mendapatkan data semua tugas yang sudah selesai oleh mahasiswa tertentu
+                    $completed_query = "SELECT t.task_id, t.title, t.deskripsi
                         FROM task t
                         JOIN documents d ON t.task_id = d.task_id
-                        WHERE d.upload = 1
-                    ";
-                    $completed_result = $conn->query($completed_query);
+                        WHERE d.upload = 1 AND d.id_profile = ? ";
+                    $stmt = $conn->prepare($completed_query);
+                    if ($stmt) {
+                        $stmt->bind_param("i", $profile_id);
+                        $stmt->execute();
+                        $completed_result = $stmt->get_result();
 
-                    if ($completed_result->num_rows > 0) {
-                        // Lakukan sesuatu jika ada tugas yang selesai
-                        while ($d = $completed_result->fetch_assoc()) {
+                        if ($completed_result->num_rows > 0) {
+                            while ($d = $completed_result->fetch_assoc()) {
                     ?>
-                            <div style="height: 170px; width: 300px;" class="col-sm-6 mb-3 mb-sm-0">
-                                <div class="card border border-2 rounded-4">
-                                    <div class="card-body">
-                                        <h5><?php echo $d['title']; ?></h5>
-                                        <p class="text-truncate"><?php echo $d['deskripsi']; ?></p>
-                                        <a href="detailmhs.php" type="button" class="btn btn-outline-dark btn-block align-self-end">Detail</a>
+                                <div style="height: 170px; width: 300px;" class="col-sm-6 mb-3 mb-sm-0">
+                                    <div class="card border border-2 rounded-4">
+                                        <div class="card-body">
+                                            <h5><?php echo htmlspecialchars($d['title']); ?></h5>
+                                            <p class="text-truncate"><?php echo htmlspecialchars($d['deskripsi']); ?></p>
+                                            <a href="detailmhs.php?task_id=<?php echo $d['task_id']; ?>" type="button" class="btn btn-outline-dark btn-block align-self-end">Detail</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                     <?php
+                            }
+                        } else {
+                            echo "No completed tasks found.";
                         }
                     } else {
-                        echo "No completed tasks found.";
+                        echo "Error preparing query: " . $conn->error;
                     }
                     ?>
                 </div>
