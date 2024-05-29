@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
         if ($password === $user["password"]) {
             $_SESSION['username'] = $username;
             $_SESSION['status'] = "login"; 
-            $_SESSION['profile_id'] = $user['profile_id'];
+            $_SESSION['id_profile'] = $user['id_profile'];
             setcookie("username", $username, time() + (86400 * 30), "/");
 
             if ($user['role'] == 'Dosen') {
